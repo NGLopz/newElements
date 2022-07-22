@@ -27,7 +27,7 @@ class CustomAdapter( private val heroList: ArrayList<Hero>,
     class ViewHolder(var itemBinding: ItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bindItem(hero: Hero) {
-            itemBinding.image.loadImage(hero.image,R.drawable.not_event)
+            itemBinding.image.loadImage(hero.image)
             itemBinding.name.text = hero.name
         }
     }
