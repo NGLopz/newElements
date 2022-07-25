@@ -17,6 +17,7 @@ class CustomAdapter( private val heroList: ArrayList<Hero>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(heroList[position])
         holder.itemView.setOnClickListener { listener(heroList[position], position) }
+
     }
 
 
@@ -24,7 +25,7 @@ class CustomAdapter( private val heroList: ArrayList<Hero>,
 
 
 
-    class ViewHolder(var itemBinding: ItemBinding) :
+    class ViewHolder(private var itemBinding: ItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bindItem(hero: Hero) {
             itemBinding.image.loadImage(hero.image)

@@ -14,10 +14,13 @@
         android:background="#fefefe"
         android:orientation="horizontal"
         tools:listitem="@layout/item"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/rv_local"/>
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_local"
@@ -26,11 +29,33 @@
         android:background="#fefefe"
         android:orientation="horizontal"
         tools:listitem="@layout/item"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rv_event"
         app:layout_constraintBottom_toBottomOf="parent"
          />
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shimmer_auto_start="true"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/viewLoading"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <include layout="@layout/loading_element"/>
+            <include layout="@layout/loading_element"/>
+            <include layout="@layout/loading_element"/>
+            <include layout="@layout/loading_element"/>
+            <include layout="@layout/loading_element"/>
+            <include layout="@layout/loading_element"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 
 

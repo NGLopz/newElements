@@ -8,8 +8,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 fun ImageView.loadImage(src: String, @DrawableRes placeHolder: Int? = null) {
-    Glide.with(context).load(src).placeholder(placeHolder ?: 0).diskCacheStrategy(
-        DiskCacheStrategy.ALL).fitCenter().into(this);
+    Glide.with(context).load(src).placeholder(placeHolder ?: 0)
+         .diskCacheStrategy(DiskCacheStrategy.ALL).fitCenter().into(this)
 }
 
 fun Context.toast(message : String){
